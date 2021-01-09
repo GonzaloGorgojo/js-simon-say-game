@@ -18,32 +18,35 @@
                 <p>Ronda: <strong id="ronda">0</strong></p>
             </div>
             <div class="col-sm-4 mt-3">
-                <button type="button" class="btn btn-primary btn-lg active" role="button"
-                    aria-pressed="true">Empezar</button>
+                <button type="button" class="btn btn-primary btn-lg active" role="button" id="botonComenzar"
+                    aria-pressed="true">Start</button>
             </div>
         </div>
         <div class="row justify-content-center my-3">
-            <div class="col-sm-6 bg-dark rounded-pill">
+            <div class="col-sm-6 bg-dark rounded-lg">
                 <div class="row row-cols-2 justify-content-center" style="height: 50vh">
-                    <div class="col-sm-4 bg-warning mt-3 text-center rounded-circle"
-                        style="opacity: 0.5; transition: opacity 500ms">A</div>
-                    <div class="col-sm-4 offset-md-1 bg-info mt-3 text-center rounded-circle"
-                        style="opacity: 0.5; transition: opacity 500ms">B</div>
-                    <div class="col-sm-4 bg-success mt-3 mb-3 text-center rounded-circle"
-                        style="opacity: 0.5; transition: opacity 500ms">C</div>
-                    <div class="col-sm-4 offset-md-1 bg-danger mt-3 mb-3 text-center rounded-circle"
-                        style="opacity: 0.5; transition: opacity 500ms">D</div>
+                    <div id="boton-1" class="botonesJuego col-5 bg-warning mt-3 mr-2  rounded-circle"
+                        style="opacity: 0.5; transition: opacity 500ms"></div>
+                    <div id="boton-2" class="botonesJuego col-5 offset-md-1 bg-info mt-3  rounded-circle "
+                        style="opacity: 0.5; transition: opacity 500ms"></div>
+                    <div id="boton-3" class="botonesJuego col-5 bg-success mt-3 mb-3 mr-2  rounded-circle "
+                        style="opacity: 0.5; transition: opacity 500ms"></div>
+                    <div id="boton-4" class="botonesJuego col-5 offset-md-1 bg-danger mt-3 mb-3 rounded-circle "
+                        style="opacity: 0.5; transition: opacity 500ms"></div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 offset-md-5">
-            <h4 class="">Puntaje: <strong>0</strong></h4>
-            <h4 class="" style="display: none;">Puntaje Maximo: <strong>0</strong></h4>
+        <div class="col-sm-6 offset-md-4">
+            <h4 class="">Puntaje Maximo: <input style="width: 10vw" type="number" value="0" disabled
+                    id="puntaje"></input></h4>
         </div>
         <div class="row justify-content-center">
-            <div class="alert alert-primary col-sm-6" role="alert" style="height: 10vh"></div>
+            <div class="alert alert-primary col-sm-6 text-center" role="alert" style="height: 10vh" id="mensajeTurnos">
+                <p>Presiona el boton "Start" para comenzar a jugar</p>
+            </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
