@@ -3,9 +3,11 @@ $botonesJuego = document.querySelectorAll('.botonesJuego');
 $mensajeTurnos = document.querySelector('#mensajeTurnos');
 $ronda = document.querySelector('#ronda');
 $puntaje = document.querySelector('#puntaje');
+$avisarTurno = document.querySelector('#avisoTurno');
 
 let memoriaMaquina = [];
 let memoriaUsuario = [];
+let listaClicks = [];
 let ronda = 0;
 
 $botonComenzar.onclick = function () {
@@ -30,6 +32,10 @@ function comenzarJuego() {
     const nuevoBoton = obtenerBotonAleatorio();
     memoriaMaquina.push(nuevoBoton);
 
+    for (let i = 0; i < memoriaMaquina.length; i++) {
+        memoriaMaquina[i] = obtenerBotonAleatorio();
+    }
+
     memoriaMaquina.forEach(function ($boton, i) {
         const TIEMPO_MAQUINA = (i + 1) * 1000;
         setTimeout(function () {
@@ -39,7 +45,7 @@ function comenzarJuego() {
 
     const TIEMPO_DESBLOQUEO = (memoriaMaquina.length + 1) * 1000;
     setTimeout(function () {
-        cambiarmensaje('Es su Turno, presione los mismos cuadros que mostro la maquina');
+        cambiarmensaje('Es su Turno, presione los mismos circulos que presiona la maquina');
         desbloquearUsuario();
     }, TIEMPO_DESBLOQUEO);
 
@@ -51,6 +57,15 @@ function comenzarJuego() {
 function bloquearUsuario() {
     $botonesJuego.forEach(function ($boton) {
         $boton.onclick = function () {
+            listaClicks.push($boton);
+            if (listaClicks.length >= 1) {
+                $avisarTurno.style.display = 'block';
+                setTimeout(function () {
+                    $avisarTurno.style.display = 'none';
+                }, 1000);
+            } else {
+                $avisarTurno.style.display = 'none';
+            }
         };
     });
 }
