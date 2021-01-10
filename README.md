@@ -2,4 +2,4 @@
 
 > El clasico juego de Simon Dice con un poco de dificultad,
 > haciendo que no repita los colores anteriores. 
-> En cada ronda nueva ronda cambiara los colores por unos nuevos.
+> En cada nueva ronda cambiara los colores por unos nuevos.
